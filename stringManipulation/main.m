@@ -42,13 +42,14 @@ int main(int argc, const char * argv[]) {
                 printf("Your string is %s\n", inputChars);
                 NSString *inputString = [NSString stringWithUTF8String:inputChars];
                 NSInteger numberized = [inputString integerValue];
-                printf("Your result is: %d\n", numberized);
+                printf("Your result is: %ld\n", (long)numberized);
                 
             }else if(resultNum == '4'){
                 printf("Input a string to Canadinize it: \n");
                 fgets(inputChars, 255, stdin);
                 printf("Your string is %s\n", inputChars);
                 NSString *inputString = [NSString stringWithUTF8String:inputChars];
+                inputString = [inputString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
                 NSString *canadian = @", eh?";
                 NSString *canadianized = [inputString stringByAppendingString:canadian];
                 NSLog(@"Your result is: %@\n", canadianized);
